@@ -7,3 +7,8 @@ declare interface User {
 	password: string | null | undefined;
 }
 
+declare interface Contact {
+	number: string
+	name: string
+	lastCall: string
+}

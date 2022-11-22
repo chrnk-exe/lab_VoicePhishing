@@ -1,11 +1,23 @@
-import React from 'react';
-import { Box, TableContainer, Table, TableRow, TableCell, Paper, TableHead } from '@mui/material';
+import React, { useState } from 'react';
+import {
+	Box,
+	TableContainer,
+	Table,
+	TableRow,
+	TableCell,
+	Paper,
+	TableHead,
+	TableBody,
+	IconButton,
+} from '@mui/material';
 import ContactsIcon from '@mui/icons-material/Contacts';
-import {useTranslation} from 'react-i18next';
-
+import { useTranslation } from 'react-i18next';
+import SortIcon from '@mui/icons-material/Sort';
+import ContactsList, { sortedByLastCall, sortedByName } from '../Contacts';
 
 const Contacts = () => {
-	const { t } = useTranslation('translation', {keyPrefix: 'contacts'});
+	const [contacts, setContacts] = useState<Contact[]>(ContactsList);
+	const { t } = useTranslation('translation', { keyPrefix: 'contacts' });
 
 	return (
 		<Box
@@ -25,7 +37,7 @@ const Contacts = () => {
 					fontSize: '3em',
 					height: '60px',
 					p: 2,
-					boxSizing: 'border-box'
+					boxSizing: 'border-box',
 				}}>
 				<ContactsIcon />
 				{t('Contacts')}
@@ -35,12 +47,39 @@ const Contacts = () => {
 					<TableHead>
 						<TableRow>
 							<TableCell>{''}</TableCell>
-							<TableCell>{}</TableCell>
+							<TableCell>
+								{t('name')}
+								<IconButton
+									sx={{ ml: 1 }}
+									onClick={() => setContacts(sortedByName)}>
+									<SortIcon />
+								</IconButton>
+							</TableCell>
+							<TableCell>{t('number')}</TableCell>
+							<TableCell>
+								{t('date')}{' '}
+								<IconButton
+									sx={{ ml: 1 }}
+									onClick={() =>
+										setContacts(sortedByLastCall)
+									}>
+									<SortIcon />
+								</IconButton>
+							</TableCell>
 						</TableRow>
 					</TableHead>
+					<TableBody>
+						{contacts.map((contact, index) => (
+							<TableRow key={index}>
+								<TableCell>{index + 1}.</TableCell>
+								<TableCell>{contact.name}</TableCell>
+								<TableCell>{contact.number}</TableCell>
+								<TableCell>{contact.lastCall}</TableCell>
+							</TableRow>
+						))}
+					</TableBody>
 				</Table>
 			</TableContainer>
-
 		</Box>
 	);
 };
