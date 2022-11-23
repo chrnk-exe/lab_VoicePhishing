@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Box, Modal, Fade, Typography, Button } from '@mui/material';
 import Scripts from './Scripts';
 import { useTranslation } from 'react-i18next';
-
-type Scripts = 1 | 2 | 3 | 4 | 5;
+import workingVideo from '../assets/1.mp4';
 
 const style = {
 	position: 'absolute' as const,
@@ -23,7 +22,6 @@ function App() {
 	const { t } = useTranslation('flag');
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
-	const handleToggle = () => setOpen(prev => !prev);
 
 	return (
 		<Box
@@ -32,15 +30,11 @@ function App() {
 			sx={{ width: '100%', boxSizing: 'border-box' }}>
 			<Box
 				sx={{
-					width: '90%',
-					height: '300px',
-					border: '1px solid darkgrey',
-					p: 1,
+					width: '98%',
 					m: 1,
 					boxSizing: 'border-box',
 				}}>
-				Тут должна быть гифка
-				<Button onClick={handleToggle}>Open Modal</Button>
+				<video src={workingVideo} width='' muted autoPlay loop></video>
 			</Box>
 			<Box
 				display="flex"
