@@ -1,26 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { type FC, useEffect } from 'react';
 import { Box, Typography, IconButton, Button, Avatar } from '@mui/material';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
-import { nextStep, incrementResult, setCallState } from '../store/slices/scriptSlice';
+import {
+	nextStep,
+	incrementResult,
+	setCallState,
+} from '../store/slices/scriptSlice';
 import { useTranslation } from 'react-i18next';
+import Typewriter from './Typewriter';
 import CallIcon from '@mui/icons-material/Call';
 
 const rightAnswers: (0 | 1)[] = [0, 1, 0, 1, 0];
 
-const Scripts = ({
-	openModal,
-	showFlag,
-}: {
+type Props = {
 	openModal(): void;
 	showFlag(): void;
-}) => {
+};
+
+const Scripts: FC<Props> = ({ openModal, showFlag }) => {
 	const step = useAppSelector(state => state.script.step);
 	const result = useAppSelector(state => state.script.result);
 	const callState = useAppSelector(state => state.script.callState);
 	const dispatch = useAppDispatch();
 	const handleCallOff = () => dispatch(setCallState(false));
 	const handleCallOn = () => dispatch(setCallState(true));
-
 
 	const answerHandler = async (choice: 0 | 1) => {
 		if (choice === rightAnswers[step - 1]) dispatch(incrementResult());
@@ -111,7 +114,7 @@ const Scripts = ({
 							}}>
 							<Avatar alt="avatar" />
 							<Typography
-								variant="h5"
+								variant="h6"
 								sx={{
 									position: 'relative',
 									bgcolor: '#FFFFF1',
@@ -130,7 +133,7 @@ const Scripts = ({
 										zIndex: '0',
 									},
 								}}>
-								{t(`${step}.message`)}
+								<Typewriter speed={50}>{t(`${step}.message`)}</Typewriter>
 							</Typography>
 						</Box>
 						<Box
@@ -140,7 +143,7 @@ const Scripts = ({
 							alignItems="flex-start"
 							gap={2}
 							padding={2}>
-							<Typography variant='h6' sx={{color: '#FFFFF1'}}>
+							<Typography variant="h6" sx={{ color: '#FFFFF1' }}>
 								{t('variants')}
 							</Typography>
 							<Button
