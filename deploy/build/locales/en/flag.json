@@ -1,0 +1,6 @@
+{
+    "good": "Congratulations! Take your flag.",
+    "bad":"You were caught and sent your information to scammers!",
+    "no_flag":"Press Restart to play again!",
+    "flag": "flag_voicePhishing"
+}

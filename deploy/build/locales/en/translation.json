@@ -1,0 +1,13 @@
+{
+    "menu": {
+        "Main Page": "Main Page",
+        "Contacts": "Contacts",
+        "Log out": "Log out"
+    },
+    "contacts": {
+        "Contacts": "Contacts",
+        "name": "Name",
+        "number": "Phone number",
+        "date": "Last call"
+    }
+}

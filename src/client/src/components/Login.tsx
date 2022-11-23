@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, {useState } from 'react';
 import classes from '../styles/Login.module.sass';
 import { TextField } from '@mui/material';
 import { Paper, Button, Link } from '@mui/material';
 import { useNavigate } from 'react-router';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { useAppDispatch } from '../store/hooks';
 import TextFieldPassword from './TextFieldPassword';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import { setUserEmail, setUserPassword } from '../store/slices/userSlice';
+import CallIcon from '@mui/icons-material/Call';
+import { setUser } from '../store/slices/userSlice';
 
 const Login = () => {
-	const user = useAppSelector(state => state.user);
+	const [user, setLoginUser] = useState<{email?:string, password?:string}>({
+		email: undefined,
+		password: undefined
+	});
+
+	const setUserEmail = (email: string) => setLoginUser(prev => ({...prev, email}));
+	const setUserPassword = (password: string) => setLoginUser(prev => ({...prev, password}));
+
 	const [error, setError] = useState(false);
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
@@ -19,12 +26,13 @@ const Login = () => {
 			user.email?.trim() === 'hacktory' &&
 			user.password?.trim() === 'password'
 		) {
+			dispatch(setUser(user));
 			window.sessionStorage.setItem('user', JSON.stringify(user));
 			navigate('/app');
 		} else {
 			setError(true);
 		}
-	};
+	};	
 
 	return (
 		<div className={classes.login}>
@@ -33,7 +41,7 @@ const Login = () => {
 				elevation={5}>
 				<form>
 					<h2>
-						<MailOutlineIcon
+						<CallIcon
 							sx={{ height: '40px', width: '40px' }}
 						/>
 						Telephony Web Service
@@ -44,13 +52,13 @@ const Login = () => {
 						label={'Email'}
 						required
 						onChange={e => {
-							dispatch(setUserEmail(e.target.value));
+							setUserEmail(e.target.value);
 							setError(false);
 						}}
 					/>
 					<TextFieldPassword
 						onChangeEventFunction={e => {
-							dispatch(setUserPassword(e.target.value));
+							setUserPassword(e.target.value);
 							setError(false);
 						}}
 						required

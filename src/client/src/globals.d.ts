@@ -3,8 +3,8 @@ declare module '*.sass';
 declare module '*.json';
 
 declare interface User {
-	email: string | null | undefined;
-	password: string | null | undefined;
+	email?: string;
+	password?: string;
 }
 
 declare interface Contact {

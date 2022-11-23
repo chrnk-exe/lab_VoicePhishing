@@ -12,7 +12,7 @@ i18n
 		// },
 
 		fallbackLng: 'en',
-		debug: true,
+		// debug: true,
 
 		interpolation: {
 			escapeValue: false // react already safes from xss

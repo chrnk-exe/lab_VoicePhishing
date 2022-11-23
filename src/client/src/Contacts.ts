@@ -2,7 +2,7 @@ import randomDate from './formatDate';
 import byField from './byField';
 
 const sortedArrayByLastCall = (contacts: Contact[]): Contact[] => {
-	const withTime = contacts
+	const withTime = [...contacts]
 		.filter(contact => contact.lastCall.split(':').length === 2)
 		.sort(byField('lastCall'));
 	const withYesterday = contacts.filter(
@@ -17,37 +17,37 @@ const sortedArrayByLastCall = (contacts: Contact[]): Contact[] => {
 const contacts: Contact[] = [
 	{
 		name: 'Boss',
-		number: '(663) 914-9128',
+		number: '8 (663) 914-91-28',
 		lastCall: '13:37',
 	},
 	{
 		name: 'Accountant',
-		number: '(779) 913-1587',
+		number: '8 (779) 913-15-87',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'Product Manager',
-		number: '(122) 824-1298',
+		number: '8 (122) 824-12-98',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'System Administrator',
-		number: '(663) 854-2851',
+		number: '8 (663) 854-28-51',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'Marketing',
-		number: '(122) 235-6825',
+		number: '8 (122) 235-68-25',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'Supply manager',
-		number: '(097) 073-2311',
+		number: '8 (097) 073-23-11',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'HR',
-		number: '(122) 085-3454',
+		number: '8 (122) 085-34-54',
 		lastCall: randomDate(),
 	},
 ];
@@ -55,7 +55,4 @@ const contacts: Contact[] = [
 export const sortedByName = [...contacts].sort(byField('name'));
 // export const sortedByLastCall = [...contacts].sort(byField('lastCall'));
 export const sortedByLastCall = sortedArrayByLastCall([...contacts]);
-console.log('Contacts', contacts);
-console.log('sortedByName', sortedByName);
-console.log('sortedByLastCall', sortedByLastCall);
 export default contacts;

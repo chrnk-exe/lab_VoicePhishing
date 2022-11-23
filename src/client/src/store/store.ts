@@ -1,8 +1,10 @@
 import { configureStore, ThunkAction, Action, getDefaultMiddleware } from '@reduxjs/toolkit';
 import userReducer from './slices/userSlice';
+import scriptReducer from './slices/scriptSlice';
 export const store = configureStore({
 	reducer: {
 		user: userReducer,
+		script: scriptReducer,
 	}, 
 	middleware: [
 		...getDefaultMiddleware({

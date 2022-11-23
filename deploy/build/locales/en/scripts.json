@@ -1,0 +1,44 @@
+{
+    "call": "Incoming call",
+    "variants": "Variants of answer",
+    "1": {
+        "number": "8 471 553-21-23",
+        "message": "Hi, I'm your system administrator, there's a problem with the database, can you please give me your username and password from the corporate network?",
+        "answers": {
+            "True": "Yes, of course, the login is 'hacktory' and the password is 'password'.",
+            "False": "No."
+        }
+    },
+    "2": {
+        "number": "8 663 914-91-28",
+        "message": "Hi, can you order sushi for lunch today? Order me a Philadelphia roll separately, the rest is to your taste, and make sure that everyone has enough!",
+        "answers": {
+            "True": "Yes, of course, boss, I hope it will be delivered quickly.",
+            "False": "You can come to my office and we'll discuss it together."
+        }
+    },
+    "3": {
+        "number": "8 232 110-21-11",
+        "message": "Hello, this is pizza delivery, can you let me into your office please?",
+        "answers": {
+            "True": "Yes.",
+            "False": "No, we ordered sushi."
+        }
+    },
+    "4": {
+        "number": "8 122 235-68-25",
+        "message": "Hi, I'm from the marketing department, could you please send to my corporate email a report on all calls made through our web service? I need to calculate the conversion rate and make a report for the boss for the previous month. My email address marketing@hacktory.com.",
+        "answers": {
+            "True": "Yes, of course (send documents).",
+            "False": "No, let's discuss such things in person."
+        }
+    },
+    "5": {
+        "number": "8 322 235-58-25",
+        "message": "Hello again, the documents didn't come, it looks like the mailbox is full, you can send the documents to my personal mail for now evilmail@gmail.com?",
+        "answers": {
+            "True": "Yes, of course (send documents).",
+            "False": "Clean the mailbox and wait for the documents to arrive."
+        }
+    }
+}
