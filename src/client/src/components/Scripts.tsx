@@ -9,6 +9,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import Typewriter from './Typewriter';
 import CallIcon from '@mui/icons-material/Call';
+import classes from '../styles/Scripts.module.sass';
 
 const rightAnswers: (0 | 1)[] = [0, 1, 0, 1, 0];
 
@@ -69,6 +70,7 @@ const Scripts: FC<Props> = ({ openModal, showFlag }) => {
 						</Box>
 						<Box>
 							<IconButton
+								className={classes.buttonPulseAnimation}
 								onClick={handleCallOff}
 								sx={{
 									width: '100px',
@@ -195,7 +197,9 @@ const Scripts: FC<Props> = ({ openModal, showFlag }) => {
 					flexGrow: 1,
 					mx: 3,
 				}}>
-				Web App for IP Telephony
+				<Typography variant='h5' sx={{color: '#FFFFF1'}}>
+					Web App for IP Telephony
+				</Typography>
 			</Box>
 		);
 };

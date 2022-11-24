@@ -42,7 +42,6 @@ function App() {
 				sx={{
 					width: '100%',
 					height: '100vh',
-					// border: '1px solid darkgrey',
 					boxSizing: 'border-box',
 				}}>
 				<Scripts
@@ -51,13 +50,7 @@ function App() {
 				/>
 				<Modal
 					open={open}
-					onClose={handleClose}
-					// closeAfterTransition
-					// BackdropComponent={Backdrop}
-					// BackdropProps={{
-					// 	timeout: 500,
-					// }}>
-				>
+					onClose={handleClose}>
 					<Fade in={open}>
 						<Box display='flex' flexDirection='column' justifyContent='center' alignItems='flexStart' sx={style}>
 							<Typography

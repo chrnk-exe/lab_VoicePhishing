@@ -49,7 +49,7 @@ const Login = () => {
 					<TextField
 						fullWidth
 						value={user.email || ''}
-						label={'Email'}
+						label={'Login'}
 						required
 						onChange={e => {
 							setUserEmail(e.target.value);
