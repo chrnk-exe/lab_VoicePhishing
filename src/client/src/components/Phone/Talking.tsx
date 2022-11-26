@@ -1,12 +1,8 @@
 import React, { type FC, useState } from 'react';
-import {
-	Button,
-	Avatar,
-	Typography,
-	Box,
-} from '@mui/material';
+import { Button, Avatar, Typography, Box } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Typewriter from '../Typewriter';
+import shuffleArray from '../../utils/shuffleArray';
 
 type Props = {
 	step: number;
@@ -25,42 +21,42 @@ const Talking: FC<Props> = ({ step, handleCallOff, incrementResult }) => {
 
 	//YandereDev mode
 	const answerHandler = (answerIsTrue: boolean) => {
-		if(step === 4){
+		if (step === 4) {
 			answerIsTrue && incrementResult();
 			handleCallOff();
 			return;
 		}
-		if(step === 5 && !answerIsTrue){
+		if (step === 5 && !answerIsTrue) {
 			handleCallOff();
-		} 
-		if(step === 5 && replicaStep === 1){
+		}
+		if (step === 5 && replicaStep === 1) {
 			answerIsTrue && incrementResult();
 			handleCallOff();
 			return;
 		}
 		nextReplica();
-		if (step === 1 && !answerIsTrue){
+		if (step === 1 && !answerIsTrue) {
 			setReplica(replicas.length - 1);
 			setTimeout(handleCallOff, 1500);
 		}
-		if(step === 1 && answerIsTrue && replicaStep === 2){
+		if (step === 1 && answerIsTrue && replicaStep === 2) {
 			incrementResult();
 			handleCallOff();
 		}
-		if(step === 2 && answerIsTrue){
+		if (step === 2 && answerIsTrue) {
 			incrementResult();
 			handleCallOff();
 		}
-		if(step === 2 && !answerIsTrue){
+		if (step === 2 && !answerIsTrue) {
 			setTimeout(handleCallOff, 3000);
 		}
-		if(step === 3 && !answerIsTrue){
+		if (step === 3 && !answerIsTrue) {
 			handleCallOff();
 		}
-		if(step === 3 && replicaStep === 1 && answerIsTrue){
+		if (step === 3 && replicaStep === 1 && answerIsTrue) {
 			incrementResult();
 			handleCallOff();
-		} else if (step === 3 && replicaStep === 1){
+		} else if (step === 3 && replicaStep === 1) {
 			handleCallOff();
 		}
 	};
@@ -118,7 +114,11 @@ const Talking: FC<Props> = ({ step, handleCallOff, incrementResult }) => {
 						},
 					}}>
 					<Typewriter speed={50}>
-						{replicas[replicaStep].message}
+						{
+							(t('scripts', { returnObjects: true }) as Script[])[
+								step - 1
+							].replicas[replicaStep].message
+						}
 					</Typewriter>
 				</Typography>
 			</Box>
@@ -132,8 +132,14 @@ const Talking: FC<Props> = ({ step, handleCallOff, incrementResult }) => {
 				<Typography variant="h6" sx={{ color: '#FFFFF1' }}>
 					{t('variants')}
 				</Typography>
-				{replicas[replicaStep].answers
-					? (replicas[replicaStep]?.answers as Answer[])?.map(
+				{(t('scripts', { returnObjects: true }) as Script[])[step - 1]
+					.replicas[replicaStep].answers
+					? shuffleArray(
+							(t('scripts', { returnObjects: true }) as Script[])[
+								step - 1
+							].replicas[replicaStep]?.answers as Answer[],
+						// eslint-disable-next-line no-mixed-spaces-and-tabs
+					  )?.map(
 						(answer, index) => (
 							<Button
 								key={index}

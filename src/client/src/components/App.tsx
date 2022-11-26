@@ -97,20 +97,6 @@ function App() {
 					pr: 1,
 				}}>
 				<video src={workingVideo} width="" muted autoPlay loop></video>
-				<Button
-					onClick={() => {
-						setOpen(true);
-						setShowFlag(true);
-					}}>
-					Show Normal Window
-				</Button>
-				<Button
-					onClick={() => {
-						setOpen(true);
-						setShowFlag(false);
-					}}>
-					Show Normal Window
-				</Button>
 			</Box>
 		</Box>
 	);

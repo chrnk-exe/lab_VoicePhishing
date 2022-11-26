@@ -6,6 +6,7 @@ import {
 	incrementResult,
 	setCallState,
 } from '../store/slices/scriptSlice';
+import {useTranslation} from 'react-i18next';
 import Incoming from './Phone/Incoming';
 import Talking from './Phone/Talking';
 import Finish from './Phone/Finish';
@@ -16,6 +17,7 @@ type Props = {
 };
 
 const Scripts: FC<Props> = ({ openModal, showFlag }) => {
+	const {t} = useTranslation('flag');
 	const step = useAppSelector(state => state.script.step);
 	const result = useAppSelector(state => state.script.result);
 	const callState = useAppSelector(state => state.script.callState);
@@ -92,7 +94,7 @@ const Scripts: FC<Props> = ({ openModal, showFlag }) => {
 					mx: 3,
 				}}>
 				<Typography variant="h5" sx={{ color: '#FFFFF1' }}>
-					You have no incoming calls
+					{t('no_incoming')}
 				</Typography>
 			</Box>
 		);
