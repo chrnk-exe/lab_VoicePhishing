@@ -10,7 +10,6 @@ import Contacts from './Contacts';
 
 const AppRoutes = () => {
 	const user = useAppSelector(state => state.user);
-	console.log(user);
 
 	return (
 		<Routes>

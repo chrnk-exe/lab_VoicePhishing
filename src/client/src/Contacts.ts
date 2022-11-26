@@ -1,5 +1,5 @@
-import randomDate from './formatDate';
-import byField from './byField';
+import randomDate from './utils/formatDate';
+import byField from './utils/byField';
 
 const sortedArrayByLastCall = (contacts: Contact[]): Contact[] => {
 	const withTime = [...contacts]
@@ -17,37 +17,37 @@ const sortedArrayByLastCall = (contacts: Contact[]): Contact[] => {
 const contacts: Contact[] = [
 	{
 		name: 'Boss',
-		number: '8 (663) 914-91-28',
+		number: '+7 (663) 914-91-28',
 		lastCall: '13:37',
 	},
 	{
 		name: 'Accountant',
-		number: '8 (779) 913-15-87',
+		number: '+7 (779) 913-15-87',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'Product Manager',
-		number: '8 (122) 824-12-98',
+		number: '+7 (122) 824-12-98',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'System Administrator',
-		number: '8 (663) 854-28-51',
+		number: '+7 (663) 854-28-51',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'Marketing',
-		number: '8 (122) 235-68-25',
+		number: '+7 (122) 235-68-25',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'Supply manager',
-		number: '8 (097) 073-23-11',
+		number: '+7 (097) 073-23-11',
 		lastCall: randomDate(),
 	},
 	{
 		name: 'HR',
-		number: '8 (122) 085-34-54',
+		number: '+7 (122) 085-34-54',
 		lastCall: randomDate(),
 	},
 ];

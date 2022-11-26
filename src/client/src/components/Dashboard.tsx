@@ -118,12 +118,12 @@ export default function PrimarySearchAppBar({
 									alt=""
 									src={
 										language === 'en'
-											? russianFlag
-											: englishFlag
+											? englishFlag
+											: russianFlag
 									}
 								/>
 							}
-							label={language === 'en' ? 'Russian' : 'Английский'}
+							label={language === 'en' ? 'EN' : 'RU'}
 							variant="outlined"
 							onClick={() =>
 								changeLanguage(language === 'en' ? 'ru' : 'en')

@@ -9,5 +9,6 @@
         "name": "Name",
         "number": "Phone number",
         "date": "Last call"
-    }
+    },
+    "talk_ended": "Call ended"
 }

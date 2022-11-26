@@ -13,10 +13,10 @@ import {
 import ContactsIcon from '@mui/icons-material/Contacts';
 import { useTranslation } from 'react-i18next';
 import SortIcon from '@mui/icons-material/Sort';
-import ContactsList, { sortedByLastCall, sortedByName } from '../Contacts';
+import { sortedByLastCall, sortedByName } from '../Contacts';
 
 const Contacts = () => {
-	const [contacts, setContacts] = useState<Contact[]>(ContactsList);
+	const [contacts, setContacts] = useState<Contact[]>(sortedByLastCall);
 	const { t } = useTranslation('translation', { keyPrefix: 'contacts' });
 
 	return (
