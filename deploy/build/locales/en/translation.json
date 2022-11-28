@@ -10,5 +10,6 @@
         "number": "Phone number",
         "date": "Last call"
     },
-    "talk_ended": "Call ended"
+    "talk_ended": "Call ended",
+    "next_call": "You will be called in: "
 }
