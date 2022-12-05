@@ -130,7 +130,11 @@ const Talking: FC<Props> = ({ step, handleCallOff, incrementResult }) => {
 				gap={2}
 				padding={2}>
 				<Typography variant="h6" sx={{ color: '#FFFFF1' }}>
-					{t('variants')}
+					{((t('scripts', { returnObjects: true }) as Script[])[
+						step - 1
+					].replicas[replicaStep].answers as Answer[])?.length > 0
+						? t('variants')
+						: ''}
 				</Typography>
 				{(t('scripts', { returnObjects: true }) as Script[])[step - 1]
 					.replicas[replicaStep].answers

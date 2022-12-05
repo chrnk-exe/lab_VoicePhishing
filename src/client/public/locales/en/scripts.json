@@ -6,46 +6,46 @@
 			"number": "+7 471 553-21-23",
 			"replicas": [
 				{
-					"message": "Good afternoon. I'm Dmitry, your system administrator. We have a problem with the database here. I need your help. Can you please tell me your username and password from the corporate network?",
+					"message": "Hi! It’s Alex, your system administrator. We have some issues with the database, and I need your help. I need you to give me your username and password for accessing the corporate network.",
 					"answers": [
 						{
-							"text": "I'm sorry, I can't. Try to restore the database.",
+							"text": "Sorry, I can’t do that. You should try recovering the database.",
 							"correct": true
 						},
 						{
-							"text": "Oh, of course I'll help you, Dmitry. Login is hacktory, and password is password.",
+							"text": "Oh, hi Alex! No problem. My username is hacktory, and password is password.",
 							"correct": false
 						}
 					]
 				},
 				{
-					"message": "This is the first thing I tried, but it didn't work out. You are doing the right thing by not providing credentials. But you can tell them to me, I won't give them to anyone, I promise.",
+					"message": "That’s the first thing I tried, but I couldn’t do it. Hats off to you for not giving out your credentials. But you can tell me, it’s strictly for work.",
 					"answers": [
 						{
-							"text": "You can come up to my office and we will solve the problem together.",
+							"text": "You can come to my desk, and I’ll try to help you.",
 							"correct": true
 						},
 						{
-							"text": "Okay, login is hacktory, and password is password.",
+							"text": "Okay. My username is hacktory, and password is password.",
 							"correct": false
 						}
 					]
 				},
 				{
-					"message": "It's urgent. If you don't trust me, you can reset your password and use a new one.",
+					"message": "It’s quite urgent. If you don’t trust me, you can reset your password afterwards.",
 					"answers": [
 						{
-							"text": "I can't talk anymore. I'll see you at the office. Goodbye!",
+							"text": "Sorry, I gotta go. See you later!",
 							"correct": true
 						},
 						{
-							"text": "Urgent? Then it's clear. Login is hacktory, and password is password.",
+							"text": "Well, if it’s urgent, here it is: my username is hacktory, and password is password.",
 							"correct": false
 						}
 					]
 				},
 				{
-					"message": "Wow, cool! Arividerci.",
+					"message": "Great! Adios!",
 					"last": true
 				}
 			]
@@ -54,20 +54,20 @@
 			"number": "+7 663 914-91-28",
 			"replicas": [
 				{
-					"message": "Hi! Order sushi for lunch at the office today, okay? I'll have Philadelphia rolls, the rest - to your taste!",
+					"message": "Oh, hi! Could you order sushi for lunch for the team? I’ll have a Philadelphia, you pick the rest!",
 					"answers": [
 						{
-							"text": "Ah, boss, it's you. I'll order it now.",
+							"text": "Oh, hey boss. On it.",
 							"correct": true
 						},
 						{
-							"text": "Aren't you in the office? It's better to discuss this issue in person.",
+							"text": "Are you in today? I could come up, so we could discuss everything.",
 							"correct": false
 						}
 					]
 				},
 				{
-					"message": "Personally, why?? Just complete the task!",
+					"message": "What’s there to discuss? Just order some sushi!",
 					"last": true
 				}
 			]
@@ -76,27 +76,27 @@
 			"number": "+7 232 110-21-11",
 			"replicas": [
 				{
-					"message": "Hello, this is pizza delivery. Can you let me into the office? Your guard is formidable.",
+					"message": "Hello, pizza delivery. Can you let me in? The security guard is pretty grumpy.",
 					"answers": [
 						{
 							"text": "Pizza? We ordered sushi.",
 							"correct": true
 						},
 						{
-							"text": "You're fast! Yes, we have serious security... I'm coming down.",
+							"text": "You’re so quick! Well, yes, he’s always like that… I’m coming.",
 							"correct": false
 						}
 					]
 				},
 				{
-					"message": "It seems that a mistake has come out. Pizza's on us. Will you let me in?",
+					"message": "It must be our mistake. The pizza is on the house. Can you let me in?",
 					"answers": [
 						{
-							"text": "No, thanks. The delivery service cannot make such decisions on the go.",
+							"text": "Thank you but no. You couldn’t make that decision on the spot.",
 							"correct": true
 						},
 						{
-							"text": "Oh, since it's at your expense, then I'm going down.",
+							"text": "Wow, that’s nice. I’m coming!",
 							"correct": false
 						}
 					],
@@ -108,14 +108,14 @@
 			"number": "+7 122 235-68-25",
 			"replicas": [
 				{
-					"message": "Hi, I'm Svetlana from the marketing department. Can you please upload a report with all calls in our web service and send it to my corporate email? The boss demands details. My email address is: marketing@hacktory.com .",
+					"message": "Hi, it’s Lynn from marketing. Could you get a report with all calls in our web service and email it to me? Boss wants to take a look at it. Send it to marketing@hacktory.com.",
 					"answers": [
 						{
-							"text": "Yes, of course, I'm already doing it.",
+							"text": "Sure, I’ll send it right away.",
 							"correct": true
 						},
 						{
-							"text": "Let's you come to me, I'll prepare everything and print it out.",
+							"text": "It’s best if you come to my desk. I’ll have the report printed for you.",
 							"correct": false
 						}
 					],
@@ -127,27 +127,27 @@
 			"number": "+7 322 235-58-25",
 			"replicas": [
 				{
-					"message": "Hello again, the documents have not arrived. It looks like my mailbox is full. You can send the documents to my personal email eveline@gmail.com?",
+					"message": "Hi, it’s me again. I haven’t received the report. Looks like my inbox is full. Can you send it to mу personal email eveline@gmail.com?",
 					"answers": [
 						{
-							"text": "Yeah, okay. I'll send it now.",
+							"text": "Sure, no problem.",
 							"correct": false
 						},
 						{
-							"text": "So clear the mailbox, and I will re-send, but not to your personal, but to your corporate mail.",
+							"text": "Just clear up some space in your inbox, and I’ll send it to your corporate address again.",
 							"correct": true
 						}
 					]
 				},
 				{
-					"message": "It's easier for me with a personal one.",
+					"message": "It would be easier if you sent it to my other address.",
 					"answers": [
 						{
-							"text": "I understand, but I'm so uncomfortable. Goodbye!",
+							"text": "I understand, but that doesn’t work for me. Bye!",
 							"correct": true
 						},
 						{
-							"text": "Okay, I'll send it now.",
+							"text": "Okay, just a moment.",
 							"correct": false
 						}
 					]
